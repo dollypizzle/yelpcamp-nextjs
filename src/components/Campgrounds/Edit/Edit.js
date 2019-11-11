@@ -58,7 +58,7 @@ const Edit = ({ id }) => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then(() => Router.push(`/campgrounds`));
+      .then(() => Router.push(`/campground/${id}`));
   };
 
   return (
