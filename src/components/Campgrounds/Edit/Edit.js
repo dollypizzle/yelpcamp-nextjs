@@ -14,7 +14,7 @@ import {
   MDBIcon,
 } from 'mdbreact';
 
-const Edit = props => {
+const Edit = ({ id }) => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
@@ -25,8 +25,8 @@ const Edit = props => {
   const handleImageChange = event => setImage(event.target.value);
   const handleDescriptionChange = event => setDescription(event.target.value);
 
-  const router = useRouter();
-  const { id } = router.query;
+  // const router = useRouter();
+  // const { id } = router.query;
 
   useEffect(() => {
     axios
@@ -40,16 +40,17 @@ const Edit = props => {
       .catch(function(error) {
         console.log(error);
       });
-  }, [props]);
+  }, []);
 
-  const onSubmit = e => {
-    e.preventDefault();
+  const onSubmit = event => {
+    event.preventDefault();
     const obj = {
       name: name,
       price: price,
       image: image,
       description: description,
     };
+
     const token = localStorage.getItem('token');
     axios
       .patch(`/campgrounds/${id}`, obj, {
@@ -57,10 +58,7 @@ const Edit = props => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then(
-        () => Router.push(`/campground/${id}`)
-        //props.history.push('/campgrounds/' + props.match.params.id + '/show')
-      );
+      .then(() => Router.push(`/campgrounds`));
   };
 
   return (

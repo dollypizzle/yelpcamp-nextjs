@@ -52,7 +52,7 @@ const Table = props => {
                 <Link
                   style={{ marginRight: '5px' }}
                   href={'/campgrounds/'}
-                  to={'/campgrounds/'}
+                  //to={'/campgrounds/'}
                   className="btn btn-success"
                 >
                   <a className="btn btn-success">Go Back</a>
@@ -60,7 +60,7 @@ const Table = props => {
                 {props.userId === props.obj.owner && (
                   <>
                     <Link
-                      href={`/edit/[${props.obj._id}]`}
+                      href={`/edit?id=${props.obj._id}`}
                       as={`/edit/${props.obj._id}`}
                     >
                       <a className="btn btn-warning">Edit</a>

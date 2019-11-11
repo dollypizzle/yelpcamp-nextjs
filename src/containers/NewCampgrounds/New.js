@@ -49,14 +49,6 @@ const NewCampground = props => {
       });
   };
 
-  // if (redirect) {
-  //   return <Redirect to={'/campgrounds'} />;
-  // }
-
-  // if (!localStorage.getItem('token')) {
-  //   return <Redirect to={'/campgrounds'} />;
-  // }
-
   return (
     <>
       <Navbar />

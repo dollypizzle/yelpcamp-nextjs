@@ -23,7 +23,8 @@ const Body = props => {
 
         <p>
           <Link
-            href={`/campground/[${props.obj._id}]`}
+            //href="/new" as="/new"
+            href={`/campground?id=${props.obj._id}`}
             as={`/campground/${props.obj._id}`}
           >
             <a className="btn btn-purple">More info</a>

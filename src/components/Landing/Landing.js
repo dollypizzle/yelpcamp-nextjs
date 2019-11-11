@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-const Landing = () => {
+const Landing = props => {
   const Header = styled.div`
     z-index: 1;
     position: relative;
@@ -13,12 +13,6 @@ const Landing = () => {
   const H1 = styled.h1`
     color: #fff;
   `;
-
-  const Link = styled.a`
-    padding: 15px;
-    border-radius: 5px;
-  `;
-
   const Slideshow = styled.ul`
     position: fixed;
     width: 100%;
@@ -43,25 +37,31 @@ const Landing = () => {
     opacity: 0;
     z-index: 0;
     animation: imageAnimation 50s linear infinite;
+
     :nth-child(1) {
       background-image: url(http://i.imgur.com/K3mPv14.jpg);
     }
+
     :nth-child(2) {
       background-image: url(http://i.imgur.com/SBEmFpv.jpg);
       animation-delay: 10s;
     }
+
     :nth-child(3) {
       background-image: url(http://i.imgur.com/emvhOnb.jpg);
       animation-delay: 20s;
     }
+
     :nth-child(4) {
       background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
       animation-delay: 30s;
     }
+
     :nth-child(5) {
       background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
       animation-delay: 40s;
     }
+
     @keyframes imageAnimation {
       0% {
         opacity: 0;
