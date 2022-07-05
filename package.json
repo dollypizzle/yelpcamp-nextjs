@@ -75,11 +75,9 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon -w server.js server.js",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build",
-    "test": "node scripts/test.js"
+    "start": "NODE_ENV=production node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
