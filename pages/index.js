@@ -1,4 +1,4 @@
-import Home from '../src/components/Landing/Landing';
+import Home from '../src/components/Home/Home';
 
 const Index = () => {
   return <Home />;
